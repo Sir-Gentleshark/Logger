@@ -1,3 +1,7 @@
 ﻿using Logger.Consumer;
+using Microsoft.Extensions.Configuration;
 
-Consumer.Init();
+var config = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("Appsettings.json", optional: false).Build();
+
+Consumer.Init(config);
