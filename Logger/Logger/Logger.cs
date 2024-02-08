@@ -23,7 +23,8 @@ namespace Logger.Logger
                     LogTime = logEntry.LogTime.ToUniversalTime(),
                     ServiceName = logEntry.ServiceName,
                     Description = logEntry.Description,
-                    Id = logEntry.Id
+                    ConversationId = logEntry.ConversationId,
+                    Level = logEntry.Level
                 };
                 logContext.Entries.AddAsync(entry);
                 logContext.SaveChanges();
